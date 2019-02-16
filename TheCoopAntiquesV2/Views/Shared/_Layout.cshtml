@@ -18,28 +18,117 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TheCoopAntiquesV2</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <partial name="_LoginPartial" />
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">The Coop Antiques</a>
+        
+        <div>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Dealers
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">View Dealers</a>
+                        <a class="dropdown-item" href="#">New Dealer</a>
+                        <a class="dropdown-item" href="#">Maintain Dealer</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Dealer Fees</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Adjustments
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">View Adjustments</a>
+                        <a class="dropdown-item" href="#">New Adjustment</a>
+                        <a class="dropdown-item" href="#">Maintain Adjustment</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Processing
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Weekly</a>
+                        <a class="dropdown-item" href="#">Monthly</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Period Manager</a>
+                        <a class="dropdown-item" href="#">Post Checks</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Configuration
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Transaction Types</a>
+                        <a class="dropdown-item" href="#">Dealer Fee Types</a>
+                        <a class="dropdown-item" href="#">Tax Rates</a>
+                        <a class="dropdown-item" href="#">Credit Fees</a>
+                        <a class="dropdown-item" href="#">Commission Rates</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Users
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">View Users</a>
+                        <a class="dropdown-item" href="#">New User</a>
+                        <a class="dropdown-item" href="#">Maintain User</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Security Roles</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Orders
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Search Orders</a>
+                        <a class="dropdown-item" href="#">New Order</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Edit Current</a>
+                        <a class="dropdown-item" href="#">Edit Post</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Void Current</a>
+                        <a class="dropdown-item" href="#">Void Post</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">LayAway Manager</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        My Sales
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">This Month</a>
+                        <a class="dropdown-item" href="#">Previous Month</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">My Balance</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown">
+                        Newsletter
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">View Newsletter</a>
+                        <a class="dropdown-item" href="#">Add Newsletter</a>
+                        <a class="dropdown-item" href="#">Edit Newsletter</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-nav ml-auto">
+            <partial name="_LoginPartial" />
+        </div>
+            
+        
+    </nav>
+
+
     <div class="container">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
@@ -48,8 +137,8 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - TheCoopAntiquesV2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-right">
+            &copy; 2019 - The Coop Antiques - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
 
