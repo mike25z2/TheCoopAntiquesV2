@@ -38,5 +38,6 @@ namespace TheCoopAntiquesV2.Models
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        public IList<DealerBooth> DealerBooth { get; set; } = new List<DealerBooth>();
     }
 }

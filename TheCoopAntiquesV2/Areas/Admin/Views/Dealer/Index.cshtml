@@ -1,0 +1,49 @@
+﻿@model IEnumerable<TheCoopAntiquesV2.Models.Dealer>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">Dealers</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-success">New Dealer</a>
+    </div>
+</div>
+
+<br />
+
+<div>
+    <table class="table table-striped border">
+        <tr class="table-primary">
+            <th>
+                @Html.DisplayNameFor(m=>m.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m=>m.LastName)
+            </th>
+            <th>
+
+            </th>
+        </tr>
+
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m=>item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.LastName)
+                </td>
+                <td>
+                    EDIT | DELETE | UPDATE
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

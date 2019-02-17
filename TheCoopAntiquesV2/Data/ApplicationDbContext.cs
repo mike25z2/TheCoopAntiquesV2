@@ -14,6 +14,15 @@ namespace TheCoopAntiquesV2.Data
         {
         }
 
-        DbSet<Dealer> Dealer { get; set; }
+        public DbSet<Dealer> Dealer { get; set; }
+        public DbSet<Booth> Booth { get; set; }
+        public DbSet<DealerBooth> DealerBooth { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<DealerBooth>()
+                .HasKey(d => new { d.DealerId, d.BoothId });
+        }
     }
 }

@@ -8,6 +8,7 @@ using TheCoopAntiquesV2.Models;
 
 namespace TheCoopAntiquesV2.Controllers
 {
+    [Area("Default")]
     public class HomeController : Controller
     {
         public IActionResult Index()

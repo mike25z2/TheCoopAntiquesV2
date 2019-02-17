@@ -69,8 +69,9 @@ namespace TheCoopAntiquesV2
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                  name: "areas",
+                  template: "{area=Default}/{controller=Home}/{action=Index}/{id?}"
+                );
             });
         }
     }
