@@ -1,0 +1,15 @@
+﻿@model int
+
+<td style="width:150px;">
+    <div class="btn-group" style="color:whitesmoke;" role="group">
+        <a type="button" class="btn btn-success" href="@Url.Action("Edit",new { id = Model })">
+            <i class="fas fa-edit"></i>
+        </a>
+        <a type="button" class="btn btn-info" href="@Url.Action("Details",new { id = Model })">
+            <i class="fas fa-glasses"></i>
+        </a>
+        <a type="button" class="btn btn-danger" href="@Url.Action("Delete",new { id = Model })">
+            <i class="fas fa-trash-alt"></i>
+        </a>
+    </div>
+</td>

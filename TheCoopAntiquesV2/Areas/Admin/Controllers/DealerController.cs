@@ -23,7 +23,7 @@ namespace TheCoopAntiquesV2.Areas.Admin.Controllers
             return View(_db.Dealer.ToList());
         }
 
-        //GET CREATE
+        #region Create
         public IActionResult Create()
         {
             return View();
@@ -38,5 +38,38 @@ namespace TheCoopAntiquesV2.Areas.Admin.Controllers
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+        #endregion
+
+        #region Edit
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null) return NotFound();
+            var dealer = await _db.Dealer.FindAsync(id);
+            if (dealer == null) return NotFound();
+            return View(dealer);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Dealer dealer)
+        {
+            if (id != dealer.Id) return NotFound();
+            if (!ModelState.IsValid) return View();
+            _db.Update(dealer);
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+        #endregion
+
+        #region Details
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null) return NotFound();
+            var dealer = await _db.Dealer.FindAsync(id);
+            if (dealer == null) return NotFound();
+            return View(dealer);
+        }
+
+        #endregion
     }
 }

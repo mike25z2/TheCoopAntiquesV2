@@ -18,6 +18,13 @@ namespace TheCoopAntiquesV2.Data
         public DbSet<Booth> Booth { get; set; }
         public DbSet<DealerBooth> DealerBooth { get; set; }
 
+        public DbSet<DealerStatusType> DealerStatusType { get; set; }
+        public DbSet<DealerStatus> DealerStatus { get; set; }
+
+        public DbSet<TaxRate> TaxRate { get; set; }
+        public DbSet<CommissionRate> CommissionRate { get; set; }
+        public DbSet<CreditFee> CreditFee { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

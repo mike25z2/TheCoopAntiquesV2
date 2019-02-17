@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TheCoopAntiquesV2.Data;
 
 namespace TheCoopAntiquesV2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190217213613_AddCommissionRate")]
+    partial class AddCommissionRate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -216,23 +218,6 @@ namespace TheCoopAntiquesV2.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CommissionRate");
-                });
-
-            modelBuilder.Entity("TheCoopAntiquesV2.Models.CreditFee", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<float>("Amount");
-
-                    b.Property<DateTime>("EndDate");
-
-                    b.Property<DateTime>("StartDate");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("CreditFee");
                 });
 
             modelBuilder.Entity("TheCoopAntiquesV2.Models.Dealer", b =>
