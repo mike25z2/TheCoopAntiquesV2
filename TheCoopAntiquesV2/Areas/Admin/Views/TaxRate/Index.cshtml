@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TheCoopAntiquesV2.Models.TaxRate>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<br />
+
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">Tax Rates</h2>
+    </div>
+    <div class="col-6 text-right">
+        <a asp-action="Create" class="btn btn-success">New Tax Rate</a>
+    </div>
+</div>
+
+<br />
+
+<div>
+    <table class="table table-striped border">
+        <tr class="table-primary">
+            <th>
+                @Html.DisplayNameFor(m => m.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Amount)
+            </th>
+            <th>
+
+            </th>
+            <th>
+
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.StartDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.EndDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+                <td>
+                    @String.Format("{0:p}",item.Amount)
+                </td>
+                <td>
+                    <partial name="_TableButtonPartial" model="item.Id" />
+                </td>
+            </tr>
+        }
+    </table>
+</div>

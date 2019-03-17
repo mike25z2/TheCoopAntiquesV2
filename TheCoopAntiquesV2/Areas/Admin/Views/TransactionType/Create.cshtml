@@ -1,0 +1,20 @@
+﻿@model TheCoopAntiquesV2.Models.TransactionType
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br />
+<h2 class="text-primary">New Transaction Type</h2>
+<br />
+
+<form method="post" asp-action="Create">
+<div class="row">
+    <div class="col-3">
+        <label asp-for="Name"></label>
+    </div>
+    <div class="col-3">
+        <input asp-for="Name" />
+    </div>
+</div>
+</form>
+

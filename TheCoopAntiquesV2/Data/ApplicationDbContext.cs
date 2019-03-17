@@ -25,6 +25,8 @@ namespace TheCoopAntiquesV2.Data
         public DbSet<CommissionRate> CommissionRate { get; set; }
         public DbSet<CreditFee> CreditFee { get; set; }
 
+        public DbSet<TransactionType> TransactionType { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
